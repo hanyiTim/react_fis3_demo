@@ -2,11 +2,11 @@ fis.set('project.files', '/index.html'); // 按需编译。
 
 // 采用 commonjs 模块化方案。
 fis.hook('commonjs', {
-  baseUrl: './modules',
+  baseUrl: './',
   extList: ['.js', '.jsx']
 });
 
-fis.match('{**.js,*.jsx}', {
+fis.match('{*.js,*.jsx}', {
   parser: fis.plugin('babel-5.x', {
       sourceMaps: true,
       optional: ["es7.decorators", "es7.classProperties"]
@@ -25,6 +25,21 @@ fis.match('**.{js,jsx}', {
 fis.match('mod.js',{
   isMod:false
 })
+
+fis.match('*.{js,es,es6,jsx,ts,tsx}', {
+  preprocessor: [
+    fis.plugin('js-require-file'),
+    fis.plugin('js-require-css')
+  ]
+})
+
+
+//使用sass，scss 雪碧图合并
+fis.match('*.scss', {
+    rExt: '.css',
+    parser: fis.plugin('node-sass'),
+    useSprite: true,
+});
 
 
 
