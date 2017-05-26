@@ -1,6 +1,6 @@
 import React,{Component,PropTypes} from 'react';
 
-import 'header.scss';
+import 'header.less';
 
 export default class Comp extends Component{
 	constructor(props) {

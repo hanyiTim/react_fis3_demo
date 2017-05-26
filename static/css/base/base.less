@@ -1,0 +1,64 @@
+*{
+	margin:0px;
+	padding:0px;
+	text-decoration: none;
+	list-style-type: none;
+    font-family: "Microsoft YaHei";
+    font-style: normal;
+}
+html,body{
+	margin:0px;
+	padding:0px;
+	color: #333;
+} 
+.of-hidden{
+	overflow:hidden;
+}
+.t-of{
+	text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.none{
+	display:none;
+}
+.block{
+	display:block;
+}
+.inline-block{
+	display:inline-block;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+/*浮动闭合*/
+.clearfix:after{
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+*html .clearfix{
+	height:1%;
+}
+*:first-child+html .clearfix { zoom: 1; }
+/*{
+	height: 1%;
+	zoom:1;
+}*/
+.clearfix{
+	display:inline-block;
+}
+/*Hide from IE Mac*/
+.clearfix{
+	display: block;
+}
+/*End hide from IE Mac*/
+
+/*float 万能闭合钥匙结束*/ 
+.clear{
+	clear: both;
+}
